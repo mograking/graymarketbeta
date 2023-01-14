@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GrayMarket</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+	
+
+
+<title>Welcome!</title>
+<h1>Welcome!</h1>
+<h2><%= email %></h2>
+
+<p>You are logged in.</p>
+
+<button class="button"><a href="/logout">Log Out</a></button>
+
+<form class="form-horizontal" action='/publish' method='put'>
+<fieldset>
+
+<!-- Form Name -->
+<legend>Publish post</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Title</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="title" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="textarea">Enter your description</textarea>
+  </div>
+</div>
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">Upload image(optional)</label>
+  <div class="col-md-4">
+    <input id="filebutton" name="filebutton" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Button Drop Down -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="buttondropdown">Set timelimit</label>
+  <input id='timelimit_input' name='timelimit' type='text' value='1' hidden>
+  <span id='timelimitdisplay'>1 week (Default)</span>
+  <div class="col-md-4">
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	  Select
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" onclick="setTime(1)" >1 week</a>
+    <a class="dropdown-item" onclick="setTime(2)" >2 weeks</a>
+    <a class="dropdown-item" onclick="setTime(3)" >3 weeks</a>
+    <a class="dropdown-item" onclick="setTime(4)" >4 weeks</a>
+  </div>
+</div>
+</div>
+</div>
+
+</fieldset>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="publish_form.js">
+</script>
+
+</body>
+</html>
